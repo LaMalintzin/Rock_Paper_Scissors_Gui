@@ -3,7 +3,7 @@ import random
 # Very simple Rock Paper Scissors game created by chatGPT
 
 # 1. Use tkinter to create an GUI
-# 2. Make the game continiue without restarting it each time.
+# 2. Make the game continue without restarting it each time.
 # 3. Add a function to determine whos gets to 10 points first.
 # 4. Add give up function, computer will say "Skynet will never loose!!!"
 
