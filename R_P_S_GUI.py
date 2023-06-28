@@ -17,7 +17,7 @@ def outcome_handler(user_choice):
 
     # Disable buttons after a player reaches 10 points
     if player_score == 10 or cpu_score == 10:
-        outcome_label.config(fg="yellow", text="Game Over!!!", font=("calibri", 20))
+        outcome_label.config(fg="brown", text="Game Over!!!", font=("calibri", 20))
         return
     
     # Array handling the three game values
@@ -46,8 +46,18 @@ def outcome_handler(user_choice):
         cpu_score_label.config(text="Computer : "+str(cpu_score))
         outcome_label.config(fg="blue", text="Outcome : Computer won")
 
-    #print(outcomes[random_number])
-
+        # Check winner after the round 
+    winner = check_winner(player_score,cpu_score)
+    if winner:
+        outcome_label.config(fg="brown", text="Game Over!! {} wins!".format(winner))
+        
+def check_winner(player_score, cpu_score):
+    if player_score >= 10:
+        return "Player"
+    elif cpu_score >= 10:
+        return "Computer"
+    else:
+        return
 
 # Main screen
 master = Tk()
